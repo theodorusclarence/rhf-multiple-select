@@ -197,7 +197,9 @@ export default function DropzoneInput({
                   <p className='text-xs text-gray-500'>{helperText}</p>
                 )}
                 {errors[id] && (
-                  <p className='text-sm text-red-500'>{errors[id].message}</p>
+                  <p className='text-sm text-red-500'>
+                    {errors[id]?.message as unknown as string}
+                  </p>
                 )}
               </div>
               {!readOnly && !!files?.length && (
