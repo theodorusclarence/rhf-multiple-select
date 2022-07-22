@@ -4,6 +4,20 @@
 
 This changelog is manually generated and not accurate with the package.json, only to show the changes since the last release.
 
+## 1.0.0 (2022-07-22)
+
+
+### Features
+
+* add multiselect example ([bb44c91](https://github.com/theodorusclarence/rhf-multiple-select/commit/bb44c919aa1af72b83dd86c8d2958c34d323d9e2))
+* initial commit ([8d32655](https://github.com/theodorusclarence/rhf-multiple-select/commit/8d326553b7c584e0d7b793daf9dc53a3bf2147db))
+
+
+### Bug Fixes
+
+* dropzone type error ([731a240](https://github.com/theodorusclarence/rhf-multiple-select/commit/731a2403b52c27ddb2861e52f08370130c95a611))
+* rhf error type ([573ac42](https://github.com/theodorusclarence/rhf-multiple-select/commit/573ac4290699e78b561226659f2f7f9bd48cff63))
+
 ## 0.5.4 - 2022-07-22
 
 ### New Features
@@ -410,4 +424,3 @@ Snippets: `reg`
 ```
 
 You should also use [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) extension.
-
