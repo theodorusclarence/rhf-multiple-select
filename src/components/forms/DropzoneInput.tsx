@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { useDropzone } from 'react-dropzone';
+import { Accept, FileRejection, useDropzone } from 'react-dropzone';
 import { Controller, useFormContext } from 'react-hook-form';
 
 import FilePreview from '@/components/forms/FilePreview';
@@ -8,7 +8,7 @@ import FilePreview from '@/components/forms/FilePreview';
 import { FileWithPreview } from '@/types/dropzone';
 
 type DropzoneInputProps = {
-  accept?: string;
+  accept?: Accept;
   helperText?: string;
   id: string;
   label: string;
@@ -48,7 +48,7 @@ export default function DropzoneInput({
   );
 
   const onDrop = React.useCallback(
-    (acceptedFiles, rejectedFiles) => {
+    <T extends File>(acceptedFiles: T[], rejectedFiles: FileRejection[]) => {
       if (rejectedFiles && rejectedFiles.length > 0) {
         setValue(id, files ? [...files] : null);
         setError(id, {
@@ -56,11 +56,10 @@ export default function DropzoneInput({
           message: rejectedFiles && rejectedFiles[0].errors[0].message,
         });
       } else {
-        const acceptedFilesPreview = acceptedFiles.map(
-          (file: FileWithPreview) =>
-            Object.assign(file, {
-              preview: URL.createObjectURL(file),
-            })
+        const acceptedFilesPreview = acceptedFiles.map((file: T) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+          })
         );
 
         setFiles(

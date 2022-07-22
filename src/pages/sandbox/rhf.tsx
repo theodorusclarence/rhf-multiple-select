@@ -56,7 +56,7 @@ export default function RHFSandbox() {
                 id='photo'
                 label='Activity Photo'
                 validation={{ required: 'Photo must be filled' }}
-                accept='image/png, image/jpg, image/jpeg'
+                accept={{ 'image/*': ['.png', '.jpg', '.jpeg'] }}
                 helperText='You can upload file with .png, .jpg, atau .jpeg extension.'
               />
               <DatePicker
